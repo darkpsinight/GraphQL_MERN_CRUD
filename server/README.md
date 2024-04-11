@@ -22,6 +22,7 @@ This folder contains the backend server code for the project.
 
 ## File Structure
 
+```
 .
     server
     ├── config                                  # `config/` - Database configuration
@@ -33,6 +34,7 @@ This folder contains the backend server code for the project.
     │ └── schema.js
     ├── index.js                                # `index.js` - Server entry point
     └── sampleData.js                           # `sampleData.js` - Sample data (for testing)
+```
 
 ## Usage
 
