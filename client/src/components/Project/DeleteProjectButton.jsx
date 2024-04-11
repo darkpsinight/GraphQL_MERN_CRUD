@@ -12,13 +12,23 @@ export default function DeleteProjectButton({ projectId }) {
     variables: { id: projectId },
     onCompleted: () => navigate("/"),
     update(cache, { data: { deleteProject } }) {
-      const { projects } = cache.readQuery({ query: GET_PROJECTS });
-      cache.writeQuery({
-        query: GET_PROJECTS,
-        data: {
-          projects: projects.filter((project) => project.id !== deleteProject.id),
-        },
-      });
+      try {
+        const data = cache.readQuery({ query: GET_PROJECTS });
+        if (!data || !data.projects) {
+          return;
+        }
+        const { projects } = data;
+        cache.writeQuery({
+          query: GET_PROJECTS,
+          data: {
+            projects: projects.filter(
+              (project) => project.id !== deleteProject.id
+            ),
+          },
+        });
+      } catch (error) {
+        console.error("Error updating cache:", error);
+      }
     },
   });
 
