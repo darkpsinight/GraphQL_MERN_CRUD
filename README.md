@@ -13,7 +13,7 @@ This project contains a MERN application, it allows querying and mutating data r
 
 1. Clone the repo
    ```sh
-    git clone https://github.com/darkpsinight/graphql-MERNG-tutorial.git
+    git clone https://github.com/darkpsinight/GraphQL_MERN_CRUD.git
     ```
 2. Install NPM packages
     ```sh
