@@ -5,6 +5,7 @@ import { GET_PROJECT } from "../graphql/queries/projectsQueries";
 import ClientInfo from "../components/Client/ClientInfo";
 import DeleteProjectButton from "../components/Project/DeleteProjectButton";
 import { FaExclamationCircle } from "react-icons/fa";
+import EditProjectForm from "../components/Project/EditProjectForm";
 
 export default function Project() {
   const { id } = useParams();
@@ -31,6 +32,7 @@ export default function Project() {
 
           <ClientInfo client={data.project.client} />
 
+          <EditProjectForm projectData={data.project} />
           <DeleteProjectButton projectId={data.project.id} />
         </div>
       ) : (

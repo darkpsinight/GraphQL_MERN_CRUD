@@ -133,7 +133,7 @@ export default function AddProjectModal() {
                     <div className="mb-3">
                       <label className="form-label">Client</label>
                       <select
-                        id="status"
+                        id="select"
                         className="form-select"
                         value={clientId}
                         onChange={(e) => setClientId(e.target.value)}

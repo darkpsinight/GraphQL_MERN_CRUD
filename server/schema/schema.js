@@ -135,6 +135,11 @@ const Mutation = new GraphQLObjectType({
       type: ClientType,
       args: { id: { type: GraphQLID } },
       resolve(_, args) {
+        Project.find({ clientId: args.id }).then((projects) => {
+          projects.forEach((project) => {
+            project.remove();
+          });
+        });
         return Client.findByIdAndDelete(args.id);
       },
     },
@@ -157,7 +162,7 @@ const Mutation = new GraphQLObjectType({
         description: { type: GraphQLString },
         status: {
           type: new GraphQLEnumType({
-            name: "ProjectStatusUpdate",
+            name: "ProjectStatusUpdate", // "client\src\graphql\mutations\project\updateProject.js" uses 'ProjectStatusUpdate'
             values: {
               new: { value: "Not Started" },
               progress: { value: "In Progress" },
