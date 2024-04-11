@@ -11,6 +11,7 @@ This folder contains the client-side React app for the project.
 
 ## Folder Structure
 
+```
 .
     client
     ├── README.md
@@ -24,6 +25,7 @@ This folder contains the client-side React app for the project.
     │   │   ├── queries
     │   │   └── mutations
     └── vite.config.js
+```
 
 ## Scripts
 
